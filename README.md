@@ -6,7 +6,7 @@ Feel free to take anything from here.
 
 ## Fall 2017
 
-- [CSIE 3340 - Computer Architecture](./Fall//CSIE\ 3340\ -\ Computer\ Architecture)
+- [CSIE 3340 - Computer Architecture](./Fall2017/CSIE\ 3340\ -\ Computer\ Architecture)
 - CSIE 4111 - Introduction to Computational Logic
 - CSIE 5028 - Algorithms for Biological Sequence Analysis
 - CSIE 7130 - Design Strategies for Computer Algorithms
