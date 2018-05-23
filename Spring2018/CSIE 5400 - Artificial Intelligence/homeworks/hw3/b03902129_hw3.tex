@@ -41,7 +41,11 @@ Please define the Go game's (19*19) states, actions, branching factor and transi
 
     Each action may remain the same state ($Pass$) or lead to a new state ($PlayBlack$ or $PlayWhite$).
 
-    \item \tb{Branching factor:} $b = 19 \times 19$.
+    \item \tb{Branching factor:} 
+    \begin{itemize}
+        \item All: $b = 19 \times 19$.
+        \item Average: $b = 250$.
+    \end{itemize}
 
     \item \tb{Transition model:} Returns the board with the same state, or with a $black$ or $white$ stone added to the specified intersection.
 
@@ -51,7 +55,7 @@ Please define the Go game's (19*19) states, actions, branching factor and transi
 
 \begin{figure}[h] 
     \begin{center}
-        \includegraphics[width=0.8\textwidth]{img/alphaBeta.png} 
+        \includegraphics[width=0.7\textwidth]{img/alphaBeta.png} 
     \end{center}
 \end{figure}
 
@@ -98,27 +102,27 @@ Please define the Go game's (19*19) states, actions, branching factor and transi
 
     \item If $\gamma = 0.5$, what is the optimal value $V^*(A)$? Justify your answer briefly.
 
-    By MDP with $\gamma = 0.5$, we have the following table:
+    % By MDP with $\gamma = 0.5$, we have the following table:
 
     $$
     \begin{array}{|l|c|c|c|c|c|}
         \hline
-              & +1  &     A &      &     & +10 \\
+              & +1&    A &     &   & +10 \\
         \hline
-        k = 0 &   0 &     0 &    0 &   0 & 0 \\
+        k = 0 & 0 &    0 &   0 & 0 & 0 \\
         \hline
-        k = 1 & 0.5 &     0 &    0 &   0 & 5 \\
+        k = 1 & 1 &    0 &   0 & 0 & 10 \\
         \hline
-        k = 2 & 0.5 &  0.25 &    0 & 2.5 & 5 \\
+        k = 2 & 1 &  0.5 &   0 & 5 & 10 \\
         \hline
-        k = 3 & 0.5 &  0.25 & 1.25 & 2.5 & 5 \\
+        k = 3 & 1 &  0.5 & 2.5 & 5 & 10 \\
         \hline
-        k = 4 & 0.5 & 0.625 & 1.25 & 2.5 & 5 \\
+        k = 4 & 1 & 1.25 & 2.5 & 5 & 10 \\
         \hline
     \end{array}
     $$
 
-    $V^*(A) = 0.625$.
+    $V^*(A) = 1.25$.
 
     \item For what range of values $\gamma$ of the discount will it be optimal to go $Right$ from $A$?
 

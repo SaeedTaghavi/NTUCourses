@@ -30,7 +30,7 @@ Image processing can be used in everywhere. Like robotic navigation systems, tra
 
 \section*{Problem definition}
 
-Use convolution neural network (CNN) and some image processing methods mentioned in class to enhance the images.
+Use convolution neural network (CNN) to implement image processing methods mentioned in class.
 
 \section*{Algorithm}
 
@@ -50,7 +50,7 @@ Our goal is:
     \item to find a broadly applicable image processing operator.
 \end{itemize}
 
-There are three desirable criteria for this algorithm:
+There are three desirable criteria we want to meet with:
 
 \begin{enumerate}
     \item Accuracy
@@ -68,7 +68,7 @@ The data lay out over layers: $\{\tb L^0, \dots, \tb L^d\}$.
 
 \begin{itemize}
     \item Dimension of $\tb L^0$ (input) and $\tb L^d$ (output): $m \times n \times 3$.
-    \item Dimension of $\tb L^s$ ($1 \le s \le d - 1$): $m \times n \times w$, where $w$ is width (features) of each layer.
+    \item Dimension of $\tb L^s$ ($1 \le s \le d - 1$): $m \times n \times w$, where $w$ is the width (features) of each layer.
 \end{itemize}
 
 $\tb L^s$ can be computed from the previous layer $\tb L^{s - 1}$ as follows:
@@ -79,11 +79,17 @@ and $\Psi^s(x)$ is computed as follow:
 
 $$\Psi^s(x) = \lambda_s x + \mu_s BN(x),$$
 
-where $\lambda_s, \mu_s \in \mathbb R$ are learned scalar weights and $BN$ is the batch normalization operator.
+where $\lambda_s, \mu_s \in \mathbb R$ are learned scalar weights and $BN$ is the batch normalization operator. We'll keep training these two scalars for each iteration.
 
 Specically, for image coordinates $x$:
 
 $$(\textbf L_j^{s - 1} *_{r_s} \textbf K_{i,j}^s) (x) = \sum\limits_{a + r_s b = x} \textbf L_j^{s - 1}(a) \textbf K_{i,j}^s(b)$$
+
+Perform dilated convolution needs to specify the kernel size, it looks like: \\
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img/dilated.png}
+\end{center}
 
 \subsubsection*{Training}
 
@@ -113,7 +119,7 @@ Image processing operator can have parameters that control its action.
     \item higher $\lambda$ leads to more aggressive smoothing
 \end{itemize}
 
-Add an input channel that is used to communicate the parameter's value to the network.
+Therefore, we can add an input channel that is used to communicate the parameter's value to the network.
 
 \subsubsection*{Single network}
 
