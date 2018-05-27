@@ -1,12 +1,14 @@
-function feature = genFeature(NUM_CHAR, char)
-    feature = zeros(NUM_CHAR, 40);
+function feature = genFeature(NUM_CHAR, NORM, char)
+    feature = zeros(NUM_CHAR, 40);      % Initialize feature
+    center = (NORM + 1) / 2;            % Center coordinate of the char image
+    radius = sqrt((1 - center)^2 + (1 - center)^2);
     for c = 1: NUM_CHAR
-        for i = 1: 15
-            for j = 1: 15
-                dist = sqrt((i - 7)^2 + (j - 7)^2);             
-                x = j - 8; y = 8 - i;
+        for i = 1: NORM
+            for j = 1: NORM
+                dist = sqrt((i - center)^2 + (j - center)^2);        % dist = d(point, center)
+                x = j - center; y = center - i;
                 if char(i, j, c) == 255
-                    if dist >= 6.7882
+                    if dist >= radius * 0.8
                         if x >= 0 && y > 0       % (I)
                             if y > x            % sector 1
                                 feature(c, 1) = feature(c, 1) + 1;
@@ -32,7 +34,7 @@ function feature = genFeature(NUM_CHAR, char)
                                 feature(c, 8) = feature(c, 8) + 1;
                             end
                         end
-                    elseif dist >= 5.0912
+                    elseif dist >= radius * 0.6
                         if x >= 0 && y > 0       % (I)
                             if y > x            % sector 1
                                 feature(c, 9) = feature(c, 9) + 1;
@@ -58,7 +60,7 @@ function feature = genFeature(NUM_CHAR, char)
                                 feature(c, 16) = feature(c, 16) + 1;
                             end
                         end
-                    elseif dist >= 3.3941
+                    elseif dist >= radius * 0.4
                         if x >= 0 && y > 0       % (I)
                             if y > x            % sector 1
                                 feature(c, 17) = feature(c, 17) + 1;
@@ -84,7 +86,7 @@ function feature = genFeature(NUM_CHAR, char)
                                 feature(c, 24) = feature(c, 24) + 1;
                             end
                         end
-                    elseif dist >= 1.6971
+                    elseif dist >= radius * 0.2
                         if x >= 0 && y > 0       % (I)
                             if y > x            % sector 1
                                 feature(c, 25) = feature(c, 25) + 1;

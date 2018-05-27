@@ -1,4 +1,4 @@
-function C = getChar(I, intensity)
+function C = getChar(I, intensity, NORM)
     [h, w] = size(I);
     top = h; left = w; right = 1; bot = 1;
 
@@ -24,11 +24,11 @@ function C = getChar(I, intensity)
     % Crop the character
     C = I(top: bot, left: right);
     [h, w] = size(C);
-    O = zeros(15, 15);
     
-    for i = 1: 15
-        for j = 1: 15
-            O(i, j) = C(uint8(round(i * h / 15 + 0.49)), uint8(round(j * w / 15 + 0.49)));
+    O = zeros(NORM, NORM);
+    for i = 1: NORM
+        for j = 1: NORM
+            O(i, j) = C(uint8(round(i * h / NORM + 0.49)), uint8(round(j * w / NORM + 0.49)));
         end
     end
     C = O;
