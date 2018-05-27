@@ -1,4 +1,4 @@
-function [I1, I2, TS, char, feature, n1, n2, Labeled_I1, Labeled_I2, H, i, g, x, eight, I, B, T, S, four, seven] = prob1()
+function [feature, Labeled_I1, Labeled_I2, H, i, g, x, eight, I, B, T, S, four, seven] = prob1()
     % Read images and convert them to binary uint8
     I1 = uint8(binary(readraw('./raw/sample1.raw', 390, 125)));
     I2 = uint8(binary(readraw('./raw/sample2.raw', 390, 125)));
@@ -48,6 +48,7 @@ function [I1, I2, TS, char, feature, n1, n2, Labeled_I1, Labeled_I2, H, i, g, x,
     
     H_img = getChar(Labeled_I1, 1, NORM) * 255;
     eight_img = getChar(Labeled_I1, 2, NORM) * 255 / 2;
+    eight_img = dilate(eight_img, 1);
     g_img = getChar(Labeled_I1, 3, NORM) * 255 / 3;
     i_img = getChar(Labeled_I1, 4, NORM) * 255 / 4;
     x_img = getChar(Labeled_I1, 6, NORM) * 255 / 5;
