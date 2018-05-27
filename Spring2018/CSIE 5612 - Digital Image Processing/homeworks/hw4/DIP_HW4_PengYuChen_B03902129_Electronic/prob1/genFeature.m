@@ -1,11 +1,9 @@
 function feature = genFeature(NUM_CHAR, char)
     feature = zeros(NUM_CHAR, 40);
     for c = 1: NUM_CHAR
-        fprintf('c = %d\n', c);
         for i = 1: 15
             for j = 1: 15
-                dist = sqrt((i - 7)^2 + (j - 7)^2);
-                fprintf('dist = %d\n', dist);
+                dist = sqrt((i - 7)^2 + (j - 7)^2);             
                 x = j - 8; y = 8 - i;
                 if char(i, j, c) == 255
                     if dist >= 6.7882
