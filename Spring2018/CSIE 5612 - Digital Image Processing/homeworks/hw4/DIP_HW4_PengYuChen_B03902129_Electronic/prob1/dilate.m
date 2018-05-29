@@ -15,5 +15,5 @@ function Dilated = dilate(I, SIZE)
         end
     end
     
-    Dilated = uint8(Dilated(2: h + 1, 2: h + 1));
+    Dilated = uint8(Dilated(2: h + 1, 2: w + 1));
 end

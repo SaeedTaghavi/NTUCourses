@@ -5,10 +5,14 @@ function [diff, matchIndex] = findChar(input_feature, training_features)
     end
     minCount = 10000;
     matchIndex = 0;
+    
     for i = 1: 70
         if diff(i) < minCount
+            
             minCount = diff(i);
+            fprintf('diff(%d) = %f\n', i, diff(i));
             matchIndex = i;
         end
     end
+    fprintf('-------------\n');
 end

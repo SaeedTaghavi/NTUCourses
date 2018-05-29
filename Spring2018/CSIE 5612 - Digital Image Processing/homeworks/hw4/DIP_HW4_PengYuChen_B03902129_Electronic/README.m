@@ -17,7 +17,7 @@ addpath('./readwriter');
 
 %######################################################################### 
 % Problem 1: Optical Character Recognition (OCR)                                           
-% Implementation: Using training set to perform OCR
+% Implementation: Using training set to perform OCR on given images
 %#########################################################################
 
 fprintf('----------------------------------------\n');

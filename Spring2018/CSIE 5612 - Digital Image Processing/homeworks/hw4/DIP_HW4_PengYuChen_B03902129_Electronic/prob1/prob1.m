@@ -9,19 +9,20 @@ function [feature, Labeled_I1, Labeled_I2, H, i, g, x, eight, I, B, T, S, four, 
         
     % Get characters of TrainingSet
     NUM_CHAR = 0;
-    NORM = 15;
+    NORM_h = 15;
+    NORM_w = 15;
     for i = 1: 5
         for j = 1: 14
             NUM_CHAR = NUM_CHAR + 1;
-            char(:, :, NUM_CHAR) = getChar(TS((i - 1) * 49 + 1: i * 49, (j - 1) * 32 + 1: j * 32), 255, NORM);
+            char(:, :, NUM_CHAR) = getChar(TS((i - 1) * 49 + 1: i * 49, (j - 1) * 32 + 1: j * 32), 255, NORM_h, NORM_w);
         end
     end
 
     % Generate features of TraingSet
-    feature = genFeature(NUM_CHAR, NORM, char);
+    feature = genFeature(NUM_CHAR, NORM_h, NORM_w, char);
     
     % Plot extracted characters of TrainingSet
-    figure('Name', "Characters", 'NumberTitle', 'off');
+    figure('Name', "Characters of TrainingSet.raw", 'NumberTitle', 'off');
     for i = 1: NUM_CHAR
         subplot(5, 14, i), imshow(char(:, :, i)), title(strcat(num2str(i)));
     end
@@ -46,60 +47,104 @@ function [feature, Labeled_I1, Labeled_I2, H, i, g, x, eight, I, B, T, S, four, 
     % Get characters of I1 %
     %%%%%%%%%%%%%%%%%%%%%%%%
     
-    H_img = getChar(Labeled_I1, 1, NORM) * 255;
-    eight_img = getChar(Labeled_I1, 2, NORM) * 255 / 2;
-    eight_img = dilate(eight_img, 1);
-    g_img = getChar(Labeled_I1, 3, NORM) * 255 / 3;
-    i_img = getChar(Labeled_I1, 4, NORM) * 255 / 4;
-    x_img = getChar(Labeled_I1, 6, NORM) * 255 / 5;
+    H_img = getChar(Labeled_I1, 1, NORM_h, NORM_w) * 255;
+    eight_img = dilate(getChar(Labeled_I1, 2, NORM_h, NORM_w) * 255 / 2, 1);
+    g_img = getChar(Labeled_I1, 3, NORM_h, NORM_w) * 255 / 3;
+    i_img = getChar(Labeled_I1, 4, NORM_h, NORM_w) * 255 / 4;
+    i_img(:, 1: 9) = 0;
+    x_img = getChar(Labeled_I1, 6, NORM_h, NORM_w) * 255 / 6;
     
-    H_feature = genFeature(1, NORM, H_img);
+    H_feature = genFeature(1, NORM_h, NORM_w, H_img);
     [H_diff, H] = findChar(H_feature, feature);
     
-    eight_feature = genFeature(1, NORM, eight_img);
+    eight_feature = genFeature(1, NORM_h, NORM_w, eight_img);
     [eight_diff, eight] = findChar(eight_feature, feature);
     
-    g_feature = genFeature(1, NORM, g_img);
+    g_feature = genFeature(1, NORM_h, NORM_w, g_img);
     [g_diff, g] = findChar(g_feature, feature);
     
-    x_feature = genFeature(1, NORM, x_img);
+    x_feature = genFeature(1, NORM_h, NORM_w, x_img);
     [x_diff, x] = findChar(x_feature, feature);
     
-    for i = 1: 15
-        for j = 1: 9
-            i_img(i, j) = 0;
-        end
-    end
-    i_feature = genFeature(1, NORM, i_img);
+    i_feature = genFeature(1, NORM_h, NORM_w, i_img);
     [i_diff, i] = findChar(i_feature, feature);
-    
+        
     %%%%%%%%%%%%%%%%%%%%%%%%
     % Get characters of I2 %
     %%%%%%%%%%%%%%%%%%%%%%%%
     
-    I_img = getChar(Labeled_I2, 1, NORM) * 255;
-    B_img = getChar(Labeled_I2, 2, NORM) * 255 / 2;
-    T_img = getChar(Labeled_I2, 3, NORM) * 255 / 3;
-    S_img = getChar(Labeled_I2, 4, NORM) * 255 / 4;
-    four_img = getChar(Labeled_I2, 5, NORM) * 255 / 5;
-    seven_img = getChar(Labeled_I2, 6, NORM) * 255 / 6;
+    I_img = getChar(Labeled_I2, 1, NORM_h, NORM_w) * 255;
+    B_img = getChar(Labeled_I2, 2, NORM_h, NORM_w) * 255 / 2;
+    T_img = shift(getChar(Labeled_I2, 3, NORM_h, NORM_w) * 255 / 3);
+    S_img = getChar(Labeled_I2, 4, NORM_h, NORM_w) * 255 / 4;
+    four_img = getChar(Labeled_I2, 5, NORM_h, NORM_w) * 255 / 5;
+    seven_img = dilate(getChar(Labeled_I2, 6, NORM_h, NORM_w) * 255 / 6, 1);
     
-    I_feature = genFeature(1, NORM, I_img);
+    I_feature = genFeature(1, NORM_h, NORM_w, I_img);
     [I_diff, I] = findChar(I_feature, feature);
     
-    B_feature = genFeature(1, NORM, B_img);
+    B_feature = genFeature(1, NORM_h, NORM_w, B_img);
     [B_diff, B] = findChar(B_feature, feature);
 
-    T_feature = genFeature(1, NORM, T_img);
+    T_feature = genFeature(1, NORM_h, NORM_w, T_img);
     [T_diff, T] = findChar(T_feature, feature);
 
-    S_feature = genFeature(1, NORM, S_img);
+    S_feature = genFeature(1, NORM_h, NORM_w, S_img);
     [S_diff, S] = findChar(S_feature, feature);
 
-    four_feature = genFeature(1, NORM, four_img);
+    four_feature = genFeature(1, NORM_h, NORM_w, four_img);
     [four_diff, four] = findChar(four_feature, feature);
 
-    seven_feature = genFeature(1, NORM, seven_img);
+    seven_feature = genFeature(1, NORM_h, NORM_w, seven_img);
     [seven_diff, seven] = findChar(seven_feature, feature);
     
+    % Print characters of Sample1.raw
+    fprintf('Characters of Sample1.raw: ');
+    if H == 8
+        fprintf('H');
+    end
+    
+    if i == 35
+        fprintf('i');
+    end
+    
+    if g == 33
+        fprintf('g');
+    end
+    
+    if x == 50
+        fprintf('X');
+    end
+    
+    if eight == 61
+        fprintf('8');
+    end
+    fprintf('\n');
+    
+    % Print characters of Sample2.raw
+    fprintf('Characters of Sample2.raw: ');
+    if S == 19
+        fprintf('S');
+    end
+    
+    if B == 2
+        fprintf('B');
+    end
+    
+    if four == 57
+        fprintf('4');
+    end
+    
+    if T == 20
+        fprintf('T');
+    end
+    
+    if seven == 60
+        fprintf('7');
+    end
+    
+    if I == 9
+        fprintf('I');
+    end
+    fprintf('\n');
 end
