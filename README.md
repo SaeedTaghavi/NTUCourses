@@ -4,6 +4,32 @@ This repo contains some course materials when I studied at NTUCSIE.
 
 Feel free to take anything from here.
 
+## Fall 2015
+
+- [CSIE 1210 - Introduction to Computer Programming]() 
+
+## Spring 2016
+
+- [CSIE 1212 - Data Structures and Algorithms]()
+- [CSIE 2122 - Discrete Mathematics]()
+- [CSIE 2121 - Probability]()
+
+## Fall 2016
+
+- [CSIE 1000 - Introduction to Computer]()
+- [CSIE 2120 - Linear Algebra]()
+- [CSIE 2136 - Algorithm Design and Analysis]()
+- [CSIE 2210 - Systems Programming]()
+- [CSIE 3510 - Computer Networks]()
+- [CSIE 3110 - Formal Languages and Automata Theory]()
+
+## Spring 2017
+
+- [EE 5163 - Advanced Digital Signal Processing]()
+- [NM 7613 - Music Signal Analysis and Retrieval]()
+- [CSIE 2344 - Digital Systems Design and Laboratory]()
+- [CSIE 3511 - Computer Network Laboratory]()
+
 ## Fall 2017
 
 - [CSIE 3340 - Computer Architecture](https://github.com/walkccc/NTUCourses/tree/master/Fall2017/CSIE%203340%20-%20Computer%20Architecture)
