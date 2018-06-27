@@ -1,13 +1,13 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.24)  25 JUN 2018 16:46
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.24)  26 JUN 2018 13:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/Jay/Repos/NTUCourses/Spring2018/CSIE 7633 - Virtual Reality/VR_report
-"
+**"/Users/Jay/Repos/NTUCourses/Spring2018/CSIE 7633 - Virtual Reality/FinalProj
+ect/VR_report"
 
-(/Users/Jay/Repos/NTUCourses/Spring2018/CSIE 7633 - Virtual Reality/VR_report.t
-ex
+(/Users/Jay/Repos/NTUCourses/Spring2018/CSIE 7633 - Virtual Reality/FinalProjec
+t/VR_report.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -748,7 +748,13 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+))
 (/Users/Jay/LaTeX/xeCJK.sty
 (/usr/local/texlive/2017/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
 (/usr/local/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -1716,6 +1722,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
+
+Overfull \hbox (37.11786pt too wide) in paragraph at lines 24--25
+\TU/lmr/m/n/10 A VR game built with Unity. And I’ve put all source code in the 
+GitHub site: https://github.com/walkccc/MonsterGo 
+ []
+
 *************************************************
 * xeCJK warning: "CJKfamily-Unknown"
 * 
@@ -1729,23 +1741,33 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 )
 [1
 
-] 
+] [2] [3]
+File: Screenshots/MainScene.png Graphic file (type QTm)
+ <use  "Screenshots/MainScene.png" >
+File: Screenshots/DayScene.png Graphic file (type QTm)
+
+<use  "Screenshots/DayScene.png" >
+File: Screenshots/NightScene.png Graphic file (type QTm)
+ <use  "Screenshots/NightScene.png" >
+File: Screenshots/EndScene.png Graphic file (type QTm)
+
+<use  "Screenshots/EndScene.png" > [4] 
 AED: lastpage setting LastPage
-[2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 90.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
+[5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 260.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 260.
  (./VR_report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 90.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 90.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 90.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 260.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 260.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 260.
  ) 
 Here is how much of TeX's memory you used:
- 38697 strings out of 493005
- 763043 string characters out of 6134595
- 825622 words of memory out of 5000000
- 42239 multiletter control sequences out of 15000+600000
+ 39042 strings out of 493005
+ 767896 string characters out of 6134595
+ 863843 words of memory out of 5000000
+ 42571 multiletter control sequences out of 15000+600000
  7200 words of font info for 30 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,11n,73p,10498b,956s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,73p,10511b,1750s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on VR_report.pdf (2 pages).
+Output written on VR_report.pdf (5 pages).
