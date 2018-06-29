@@ -1,0 +1,71 @@
+\usepackage[a4paper, margin=1in]{geometry}  % Design Paper Size
+\usepackage{inputenc, color}
+\usepackage{xeCJK, fontspec, courier}
+\usepackage{ulem, CJKulem}
+\usepackage{enumerate, listings, kantlipsum, enumitem}
+\usepackage{amsmath, amssymb}
+\usepackage{indentfirst} 
+\usepackage{slashbox}
+\usepackage{diagbox}
+\usepackage{colortbl}
+\usepackage[pdfencoding=auto, psdextra]{hyperref}
+% 超連結設定
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% 字體設定
+\setCJKmainfont[
+    BoldFont = cwTeXQHei-Bold,
+    ItalicFont = cwTeXQYuan-Medium
+    ]{cwTeXQFangsong-Medium}
+
+% 設定縮排
+\setlength{\parindent}{10 pt}
+\hfuzz = \maxdimen
+\tolerance = 10000
+\hbadness = 10000
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Design Strategies for Computer Algorithms, Fall 2017}
+\rhead{Homework 3}
+% \lfoot{Lecture 1}
+% \rfoot{Handout 1}
+
+
+% \lstset{basicstyle=\footnotesize\sffamily,breaklines=true}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=MATLAB,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\usepackage[edges]{forest}
+
+% font-size
+\usepackage{type1cm}
