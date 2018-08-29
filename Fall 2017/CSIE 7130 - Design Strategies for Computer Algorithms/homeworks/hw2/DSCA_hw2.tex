@@ -1,16 +1,23 @@
+% !TEX program = xelatex
 \documentclass[15pt]{extarticle}
-\usepackage{cs}
+\usepackage{/Users/Jay/LaTeX/cs}
+\usepackage{/Users/Jay/LaTeX/xeCJK}
     
-\begin{document} 
+\newcommand{\hmwkClass}{演算法設計方法論(Design Strategies for Computer Algorithms)}
+\newcommand{\hmwkTitle}{Homework 2}
+\newcommand{\hmwkDueDate}{November 27, 2017}
+\newcommand{\tb}{\textbf}
+
+\begin{document}
+
 \thispagestyle{empty}
-\fontsize{12pt}{12pt}\selectfont
-\section*{演算法設計方法論(Design Strategies for Computer Algorithms) \\
-\normalsize{Homework 2} \\
-\normalsize{DUE DATE: NOVEMBER 27, 2017}}
+\section*{\hmwkClass \\
+    \normalsize{\hmwkTitle} \\
+    \normalsize{DUE DATE: \hmwkDueDate}
+}
 
 \hfill \textbf{學號：b03902129 \, 系級：資工四 \, 姓名：陳鵬宇} \\
 
-% 1
 \section{問題定義}
 \textbf{問題}：\begin{minipage}[t]{0.8\linewidth}
     \textit{The weighted center of a tree.} \vskip0mm
@@ -166,7 +173,5 @@ $\because |v\in T_j(c)|\le n/2$，$\therefore s>\lfloor n/4\rfloor-1$（$s$代�
 \textit{The weighted center of a tree}的應用層面很廣，例如當貨運公司，要決定自己的倉庫要放在一個國家中哪個位置，可以由每個可能被運送的城市（vertex）的消費強度（$w_i,\forall vertex$ $i$）以及每個城市彼此間的交通費（edge$(i,j)$），由此計算出倉庫位置（重心$c$）。\\
 
 當每個城市的消費強度相當時，題目會被簡化（reduce）成最小生成樹（\textit{minimum spanning tree}, MST），當然也可以在線性的時間內算出倉庫位置。
-
-    
 
 \end{document}

@@ -1,16 +1,23 @@
+% !TEX program = xelatex
 \documentclass[15pt]{extarticle}
-\usepackage{cs}
+\usepackage{/Users/Jay/LaTeX/cs}
+\usepackage{/Users/Jay/LaTeX/xeCJK}
 
-\begin{document} 
-\fontsize{12pt}{12pt}\selectfont
+\newcommand{\hmwkClass}{演算法設計方法論(Design Strategies for Computer Algorithms)}
+\newcommand{\hmwkTitle}{Homework 4}
+\newcommand{\hmwkDueDate}{January 8, 2018}
+\newcommand{\tb}{\textbf}
+
+\begin{document}
+
 \thispagestyle{empty}
-\section*{演算法設計方法論(Design Strategies for Computer Algorithms) \\
-\normalsize{Homework 4} \\
-\normalsize{DUE DATE: JANUARY 8, 2018}}
+\section*{\hmwkClass \\
+    \normalsize{\hmwkTitle} \\
+    \normalsize{DUE DATE: \hmwkDueDate}
+}
 
 \hfill \textbf{學號：b03902129 \, 系級：資工四 \, 姓名：陳鵬宇} \\
 
-% 1
 \section{問題定義}
 
 \vskip3mm
@@ -70,7 +77,7 @@ Lemma 2 告訴我們可以在 $O(n)$ 內在 CH$(S)$找到所述射線，同時�
     \item 將$n$個圓 $C_i(Q_i,r_i)$分為兩子集 \\
         根據 2.1 Shamos 和 Hoey 所提出的演算法，我們可以以得到兩個沃羅諾伊圖$V(L)$和$V(R)$。
         \begin{center}
-            \includegraphics[width=0.5\textwidth]{fig4.png}
+            \includegraphics[width=0.5\textwidth]{./img/fig4.png}
         \end{center}
     \begin{lemma}
         分治線是單行的，由兩條射線和幾條有限線段組成。Laguerre幾何中的巨觀下，多邊型左邊（右邊）的每一點與$L(R)$中的某個圓比$R(L)$中的任何圓更接近。
@@ -82,14 +89,14 @@ Lemma 2 告訴我們可以在 $O(n)$ 內在 CH$(S)$找到所述射線，同時�
     \item 在$O(n)$內找到射線 \\
     凸包邊緣可能退化至一直線，而有些情況會變得不成立。
     \begin{center}
-        \includegraphics[width=0.5\textwidth]{fig5.png}
-        \includegraphics[width=0.5\textwidth]{fig6.png}
-        \includegraphics[width=0.5\textwidth]{fig7.png}
+        \includegraphics[width=0.5\textwidth]{./img/fig5.png}
+        \includegraphics[width=0.5\textwidth]{./img/fig6.png}
+        \includegraphics[width=0.5\textwidth]{./img/fig7.png}
     \end{center}
     由於在$V(L_l)$和$V(R_l)$中所有沃羅諾伊邊都與直線$l$，所以我們可以在$O(n)$內合併$V(L_l)$和$V(R_l)$來
     得到$V(L_l\cap R_l)$。由於在沃羅諾伊圖中區域數量的複雜度為$O(n)$，因此可以在$O(n)$內找到分治線。
     \begin{center}
-        \includegraphics[width=0.5\textwidth]{fig8.png}
+        \includegraphics[width=0.5\textwidth]{./img/fig8.png}
     \end{center}
 \end{enumerate}
 
